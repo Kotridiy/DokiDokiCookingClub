@@ -2,20 +2,20 @@
 
 # human readable name of this game
 # _() marks strings eligable for translation
-define config.name = "DDLC Mod Template"
+define config.name = "Doki Doki Cooking Club"
 
 # True shows the name on main menu, False hides it
 define gui.show_name = True
 
 # Version of the game
-define config.version = "1.1.2"
+define config.version = "0.1"
 
 # text placed on about screen
 define gui.about = _("")
 
 # short name used in executables and dirs.
 # ASCII-only, no spaces, no colons, no semis
-define build.name = "DDLCModTemplate"
+define build.name = "DokiDokiCookingClub"
 
 # Controls which sound / music mixers are available
 define config.has_sound = True
@@ -23,7 +23,7 @@ define config.has_music = True
 define config.has_voice = False
 
 # main menu music
-define config.main_menu_music = audio.t1
+define config.main_menu_music = audio.menu
 
 # enter / exiting game menu transitions
 define config.enter_transition = Dissolve(.2)
@@ -66,7 +66,7 @@ default preferences.sfx_volume = 0.75
 #   Linux: $HOME/.renpy/
 #
 # must be a literal string
-define config.save_directory = "DDLC_Mod_Template"
+define config.save_directory = "DDLC_Cooking_Mod"
 
 # icon displayed on taskbar / dock
 define config.window_icon = "gui/window_icon.png"
@@ -147,8 +147,7 @@ init python:
     build.archive("submods", build.name)
 
     # folder / files to put in archives
-    build.classify("game/mod_assets/**", "mod_assets")
-    build.classify("game/submods/**", "submods")
+    build.classify("game/mod_assets/**", "scripts")
     build.classify('game/**.rpyc', "scripts")
     build.classify('game/advanced_scripts/**', "scripts")
     build.classify('game/original_story_scripts/**', "scripts")
@@ -168,6 +167,7 @@ init python:
     build.classify('/game/10', None)
     build.classify('/game/cache/*.*', None)
     build.classify('**.rpa', None)
+    build.classify("game/submods/**", None)
 
     # stuff not in archive
     build.classify('README.html', build.name)

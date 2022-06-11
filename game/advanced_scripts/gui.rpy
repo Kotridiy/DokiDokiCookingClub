@@ -58,13 +58,16 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.default_font = "gui/font/Aller_Rg.ttf"
+##define gui.default_font = "gui/font/Aller_Rg.ttf"
+define gui.default_font = "/mod_assets/font/Roboto_Flex.ttf"
 
 ## The font used for character names.
-define gui.name_font = "gui/font/RifficFree-Bold.ttf"
+##define gui.name_font = "gui/font/Raleway.ttf"
+define gui.name_font = "/mod_assets/font/Montserrat.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_font = "gui/font/Aller_Rg.ttf"
+##define gui.interface_font = "gui/font/Aller_Rg.ttf"
+define gui.interface_font = "/mod_assets/font/Roboto_Flex.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 24
@@ -397,7 +400,13 @@ define gui.nvl_thought_xalign = 0.0
 define gui.nvl_button_xpos = 450
 define gui.nvl_button_xalign = 0.0
 
+## Localization ################################################################
 
+## This controls where a line break is permitted. The default is suitable
+## for most languages. A list of available values can be found at https://
+## www.renpy.org/doc/html/style_properties.html#style-property-language
+
+define gui.language = "unicode"
 
 ################################################################################
 # Mobile devices
@@ -465,4 +474,13 @@ init python:
         gui.quick_button_text_size = 20
 
 
-
+    layout.ARE_YOU_SURE = _("Вы уверены?")
+    layout.DELETE_SAVE = _("Вы уверены, что хотите удалить сохранение?")
+    layout.OVERWRITE_SAVE = _("Вы уверены, что хотите перезаписать сохранение?")
+    layout.LOADING = _("Загрузка приведёт к потере прогресса.\nВы уверены, что хотите это сделать?")
+    layout.QUIT = _("Вы уверены, что хотите выйти?")
+    layout.MAIN_MENU = _("Вы уверены, что хотите вернуться в главное меню?\nЭто приведёт к потере прогресса.")
+    layout.END_REPLAY = _("Вы уверены, что хотите остановить повтор?")
+    layout.SLOW_SKIP = _("Вы уверены, что хотите начать пропуск текста?")
+    layout.FAST_SKIP_UNSEEN = _("Вы уверены, что хотите пропустить непрочитанный текст до следующего выбора?")
+    layout.FAST_SKIP_SEEN = _("Вы уверены, что хотите перейти к следующему выбору?")

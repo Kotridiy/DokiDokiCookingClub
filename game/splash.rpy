@@ -10,7 +10,7 @@ init -100 python:
 init python:
     menu_trans_time = 1
 
-    splash_message_default = "This game is an unofficial fan work, unaffiliated with Team Salvato."
+    splash_message_default = "Игра создана командой замечательных людей."
 
     splash_messages = [
         "Please support Doki Doki Literature Club.",
@@ -239,15 +239,15 @@ label splashscreen:
             $ quick_menu = False
             scene black
             menu:
-                "A previous save file has been found. Would you like to delete your save data and start over?"
-                "Yes, delete my existing data.":
-                    "Deleting save data...{nw}"
+                "Предыдущий файл сохранения утерян. Вы хотите удалить ваши сохранения и начать заново?"
+                "Да. Удалить существующие данные.":
+                    "Удаление данных...{nw}"
                     python:
                         delete_all_saves()
                         renpy.loadsave.location.unlink_persistent()
                         renpy.persistent.should_save_persistent = False
                         renpy.utter_restart()
-                "No, continue where I left off.":
+                "Нет, продолжить с прошлого места.":
                     pass
 
         python:
@@ -267,13 +267,13 @@ label splashscreen:
         with Dissolve(1.0)
         pause 1.0
 
-        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated with Team Salvato."
-        "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
-        "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: http://ddlc.moe"
+        "[config.name] это фанатский мод для Doki Doki Literature Club, который не связан с Team Salvato."
+        "Он содержит спойлеры к основной игре, поэтому убедитесь что вы прошли оригинальную игру прежде чем начать."
+        "Официальную игру Doki Doki Literature Club можно скачать бесплатно по ссылке: http://ddlc.moe"
 
         menu:
-            "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
-            "I agree.":
+            "Играя в [config.name] вы соглашаетесь что прошли Doki Doki Literature Club и готовы к любым спойлерам что содержатся в моде."
+            "Принять.":
 
                 pass
         scene tos2
@@ -297,7 +297,6 @@ label splashscreen:
     show white
     $ persistent.ghost_menu = False
     $ splash_message = splash_message_default
-    $ config.main_menu_music = audio.t1
     $ renpy.music.play(config.main_menu_music)
     show intro with Dissolve(0.5, alpha=True)
     pause 2.5
@@ -325,8 +324,8 @@ label after_load:
     if anticheat != persistent.anticheat:
         stop music
         scene black
-        "The save file could not be loaded."
-        "Are you trying to cheat?"
+        "Это сохраение не может быть загружено."
+        "Неужели ты пытаешься сжульничать?"
 
 
         $ renpy.utter_restart()
@@ -356,7 +355,6 @@ label autoload:
     jump expression persistent.autoload
 
 label before_main_menu:
-    $ config.main_menu_music = audio.t1
     return
 
 label quit:

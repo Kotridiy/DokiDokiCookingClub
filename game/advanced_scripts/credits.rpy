@@ -189,7 +189,8 @@ image credits_ts:
 
 #This styles the different text in the credits
 style credits_header:
-    font "gui/font/RifficFree-Bold.ttf"
+#    font "gui/font/RifficFree-Bold.ttf"
+    font "/mod_assets/font/Prostir_Sans_Display.ttf"
     color "#ffaae6"
     size 36
     text_align 0.5

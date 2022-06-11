@@ -1,4 +1,4 @@
-label mod_start:
+label monika_story_start:
     
     stop music fadeout 2.0
     

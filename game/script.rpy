@@ -24,8 +24,11 @@ label start:
 
 
     menu:
-        "Start the mod":
-            call mod_start from _call_mod_start
+        "Monika's story":
+            call monika_story_start
+            
+        "Тестовый запуск":
+            call girls_stories_start
             
         "Monika teacher":
             if persistent.example_seen:

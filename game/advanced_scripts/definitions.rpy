@@ -46,6 +46,9 @@ init python:
 #For easier reference, there are comments next to it so you can go DJ on the mod :)
 define audio.t1 = "<loop 22.073>bgm/1.ogg"  #Main theme (title)
 
+#My title music
+define audio.menu = "/mod_assets/music/menu.ogg"
+
 
 define audio.t2 = "<loop 4.499>bgm/2.ogg"   #Sayori theme
 define audio.t2g = "bgm/2g.ogg"
@@ -222,6 +225,10 @@ image glitch_color2:
         #1.0
         #linear 1.0 alpha 0.0
 
+#------------------------------------------------My sprites
+image test 1 = im.Composite((960, 960), (0, 0), "/mod_assets/image/test.png")
+
+        
 #------------------------------------------------From hereon, the girl's bodies are defined along with their heads.
 #-----------------------------------------here's reference for the left half------the right half--------the head
 # Sayori
